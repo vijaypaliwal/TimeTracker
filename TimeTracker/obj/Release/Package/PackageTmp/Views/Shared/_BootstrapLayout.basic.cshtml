@@ -1,0 +1,62 @@
+
+@using BootstrapSupport
+@using NavigationRoutes
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Time Tracker-@ViewBag.Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="@Url.Content("~/Content/themes/jquery-ui.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/metro-bootstrap.css")" rel="stylesheet" />        
+    <link href="@Url.Content("~/Content/bootstrap-responsive.min.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Scripts/jquery-ui-timepicker-addon.css")" rel="stylesheet" type="text/css" />
+      
+	<link href="" rel="stylesheet" type="text/css" />
+        @RenderSection("head", required: false)
+        @Html.Partial("_html5shiv")
+        @* favicons and touch icons go here *@
+    </head>
+    <body>
+        <div class="navbar navbar-top navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Time Tracker</a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                              <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Status", "Index", "Status")</li>
+                             <li>@Html.ActionLink("Patient", "Index", "Patient")</li>
+                            <li>@Html.ActionLink("Tracking records", "Index", "Tracker")</li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>        
+        <div class="container">            
+                    @Html.Partial("_alerts")
+  @*  <div class="hero-unit">
+       @RenderSection("featured", false)
+      </div>*@
+    
+            @RenderBody()   
+            <hr>
+            <footer>
+                <p>&copy; Shivam ITCS @System.DateTime.Now.ToString("yyyy")</p>
+            </footer> 
+        </div>
+         <script src="@Url.Content("~/Scripts/jquery-1.7.1.js")"></script>
+        <script src="@Url.Content("~/Scripts/jquery-ui-1.8.20.js")"></script>
+        <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+        
+        <script src="@Url.Content("~/Scripts/modernizr-2.5.3.js")"></script>
+         @RenderSection("Scripts", required: false)
+    </body>
+</html>
+

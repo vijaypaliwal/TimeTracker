@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="TimeTrackerContext-Web.config Connection String" description="TimeTrackerContext Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:zc91abnfc6.database.windows.net,1433;Database=TimeTrackerEMR_db;User ID=vijay@zc91abnfc6;Password={your_password_here};Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\StudentPortal\\TimeTracker\\TimeTracker\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TimeTrackerContext']/@connectionString" />
+  </parameter>
+</parameters>

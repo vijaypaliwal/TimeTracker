@@ -1,0 +1,46 @@
+﻿@model TimeTracker.Models.Patient
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Patient</legend>
+
+    <div class="display-label">FirstName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">LastName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">MiddleName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MiddleName)
+    </div>
+
+    <div class="display-label">FullName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullName)
+    </div>
+        <div class="display-label">Person Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PersonType)
+    </div>
+    <div class="display-label">IsLocked</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsLocked)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

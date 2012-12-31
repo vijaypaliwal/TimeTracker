@@ -1,0 +1,30 @@
+﻿@model TimeTracker.Models.Tracker
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Tracker</legend>
+
+    <div class="display-label">Patient</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient.FirstName)
+    </div>
+
+    <div class="display-label">TrakingDateTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TrakingDateTime)
+    </div>
+
+    <div class="display-label">Status</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TrackerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

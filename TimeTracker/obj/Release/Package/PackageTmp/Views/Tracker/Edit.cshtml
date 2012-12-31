@@ -1,0 +1,51 @@
+﻿@model TimeTracker.Models.Tracker
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Tracker</legend>
+
+        @Html.HiddenFor(model => model.TrackerID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PatientID, "Patient")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("PatientID", String.Empty)
+            @Html.ValidationMessageFor(model => model.PatientID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TrakingDateTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TrakingDateTime)
+            @Html.ValidationMessageFor(model => model.TrakingDateTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StatusId, "Status")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("StatusId", String.Empty)
+            @Html.ValidationMessageFor(model => model.StatusId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

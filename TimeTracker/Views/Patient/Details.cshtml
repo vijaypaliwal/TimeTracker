@@ -1,0 +1,42 @@
+﻿@model TimeTracker.Models.Patient
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Patient</legend>
+
+    <div class="display-label">FirstName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">LastName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">MiddleName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MiddleName)
+    </div>
+
+    <div class="display-label">FullName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullName)
+    </div>
+    <div class="display-label">Person Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PersonType)
+    </div>
+    <div class="display-label">IsLocked</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsLocked)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
